@@ -5,9 +5,9 @@
 
 ### 1. asm_dir.py
 
--dependencies:	memory_manage.py
--globals: direc_list(stores assembler directives to be processed)
--action: assembler directive handler
+- dependencies:	memory_manage.py
+- globals: direc_list(stores assembler directives to be processed)
+- action: assembler directive handler
 
 #### functions:
 
@@ -28,17 +28,17 @@ c) direc:
 
 ### 2. assembler.py
 
--dependencies: re
--globals: none
--actions: instuction parser
+- dependencies: re
+- globals: none
+- actions: instuction parser
 
 
 
 ### 3. first_pass.py
 
--dependencies: asm_dir.py
--globals: none
--action: handles pass 1 of the assembler
+- dependencies: asm_dir.py
+- globals: none
+- action: handles pass 1 of the assembler
 
 #### functions: 
 
@@ -54,11 +54,11 @@ b) par:
 		 assembler directive processor as asm_dir.direc().
 
 ### 4. gui.py
--dependencies: tkinter, assembler.py, processor.py, memory_manage.py
--globals: code(current console command), asm(current software operating mode), view(to switch between memory view and symtab)
+- dependencies: tkinter, assembler.py, processor.py, memory_manage.py
+- globals: code(current console command), asm(current software operating mode), view(to switch between memory view and symtab)
 	 ps(window), menu(top menu), consoleframe(stores console details like input, output, buttons, etc), memoryframe(stores
 	 memory view details for symtab, memory display), registerframe(stores register details), selectframe(for mode change)  
--action: generates and handles gui of software.
+- action: generates and handles gui of software.
 
 #### functions: 
 
@@ -109,9 +109,9 @@ e) __main__:
 	
 ### 5) main.py
 
--dependencies: argparse, assembler.py, processor.py, memory_manage.py, firstpass
--globals: addressCounter(stores address counter values)
--action: handles CLI action of software
+- dependencies: argparse, assembler.py, processor.py, memory_manage.py, firstpass
+- globals: addressCounter(stores address counter values)
+- action: handles CLI action of software
 
 #### functions:
 
@@ -132,9 +132,9 @@ c) __main__:
 
 ### 6) memory_manage.py
 
--dependencies: none
--globals : f(memory reader), g(mempad reader)
--action: handles memory management
+- dependencies: none
+- globals : f(memory reader), g(mempad reader)
+- action: handles memory management
 
 #### functions: 
 
@@ -200,9 +200,9 @@ j) _init_:
 
 ### 7) processor.py
 
--dependencies: none
--globals: none
--action: processes instruction
+- dependencies: none
+- globals: none
+- action: processes instruction
 
 #### funtcions: several
 
