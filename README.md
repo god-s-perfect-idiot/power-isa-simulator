@@ -1,15 +1,15 @@
-## POWERSIM
+# POWERSIM
 
 
-### Detailed Documentation:
+## Detailed Documentation:
 
-#### 1. asm_dir.py
+### 1. asm_dir.py
 
 dependencies:	memory_manage.py
 globals: direc_list(stores assembler directives to be processed)
 action: assembler directive handler
 
-##### functions:
+#### functions:
 
 a) symtab_update: 
 	inputs - none
@@ -26,7 +26,7 @@ c) direc:
 	outputs - addressCounter(updated address counter value)
 	action - reads the line, checks for assembler directives. If found, updates the symtab accordingly.
 
-#### 2. assembler.py
+### 2. assembler.py
 
 dependencies: re
 globals: none
@@ -34,13 +34,13 @@ actions: instuction parser
 
 
 
-#### 3. first_pass.py
+### 3. first_pass.py
 
 dependencies: asm_dir.py
 globals: none
 action: handles pass 1 of the assembler
 
-##### functions: 
+#### functions: 
 
 a) symtab_append:
 	inputs - line(directive to be written)
@@ -53,14 +53,14 @@ b) par:
 	action - checks if line has assembler directives, comments or labels and updates the symtab accordingly and calls 
 		 assembler directive processor as asm_dir.direc().
 
-#### 4. gui.py
+### 4. gui.py
 dependencies: tkinter, assembler.py, processor.py, memory_manage.py
 globals: code(current console command), asm(current software operating mode), view(to switch between memory view and symtab)
 	 ps(window), menu(top menu), consoleframe(stores console details like input, output, buttons, etc), memoryframe(stores
 	 memory view details for symtab, memory display), registerframe(stores register details), selectframe(for mode change)  
 action: generates and handles gui of software.
 
-##### functions: 
+#### functions: 
 
 a) mode_change:
 	inputs - mode(global)
@@ -107,13 +107,13 @@ e) __main__:
 	outputs: globals
 	action: creates and organizes UI components
 	
-#### 5) main.py
+### 5) main.py
 
 dependencies: argparse, assembler.py, processor.py, memory_manage.py, firstpass
 globals: addressCounter(stores address counter values)
 action: handles CLI action of software
 
-##### functions:
+#### functions:
 
 a) run:
 	inputs - args, addressCounter(global)
@@ -130,13 +130,13 @@ c) __main__:
 	outputs - none
 	action - calls main
 
-#### 6) memory_manage.py
+### 6) memory_manage.py
 
 dependencies: none
 globals : f(memory reader), g(mempad reader)
 action: handles memory management
 
-##### functions: 
+#### functions: 
 
 a) symtab_flush:
 	inputs - none
@@ -198,29 +198,29 @@ j) _init_:
 	outputs - none
 	action - flushes symtab, mempad and memory, initialises memory and mempad
 
-#### 7) processor.py
+### 7) processor.py
 
 dependencies: none
 globals: none
 action: processes instruction
 
-##### funtcions: several
+#### funtcions: several
 
-#### 8) input.s
+### 8) input.s
 IBM's original sample code for POWERPC
 
-#### 9) simple.s
+### 9) simple.s
 A simpler sample code we made for testing
 
-#### 10) memory
+### 10) memory
 displays memory status
 
-#### 11) mempad
+### 11) mempad
 displays memorypad status
 
-#### 12) symtab
+### 12) symtab
 displays symbol table status
 
-#### 13) setup_Windows.py
+### 13) setup_Windows.py
 
 	Build executable for Windows. supply the command: 'python setup_Windows.py build' in a CMD terminal. 
