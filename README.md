@@ -24,7 +24,7 @@ or Run `gui.py`
 - action: assembler directive handler
 
 #### functions:
-
+```
 a) symtab_update: 
 	- inputs - none
 	- outputs - none
@@ -39,7 +39,7 @@ c) direc:
 	- inputs - line(current instruction), addressCounter(current address counter value)
 	- outputs - addressCounter(updated address counter value)
 	- action - reads the line, checks for assembler directives. If found, updates the symtab accordingly.
-
+```
 ### 2. assembler.py
 
 - dependencies: re
@@ -55,7 +55,7 @@ c) direc:
 - action: handles pass 1 of the assembler
 
 #### functions: 
-
+```
 a) symtab_append:
 	- inputs - line(directive to be written)
 	- outputs - none
@@ -66,7 +66,7 @@ b) par:
 	- outputs - addressCounter(updated address counter value)
 	- action - checks if line has assembler directives, comments or labels and updates the symtab accordingly and calls 
 		 assembler directive processor as asm_dir.direc().
-
+```
 ### 4. gui.py
 - dependencies: tkinter, assembler.py, processor.py, memory_manage.py
 - globals: code(current console command), asm(current software operating mode), view(to switch between memory view and symtab)
@@ -75,7 +75,7 @@ b) par:
 - action: generates and handles gui of software.
 
 #### functions: 
-
+```
 a) mode_change:
 	- inputs - mode(global)
 	- outputs - mode(global)
@@ -121,6 +121,7 @@ e) __main__:
 	- outputs: globals
 	- action: creates and organizes UI components
 	
+```
 ### 5) main.py
 
 - dependencies: argparse, assembler.py, processor.py, memory_manage.py, firstpass
@@ -128,7 +129,7 @@ e) __main__:
 - action: handles CLI action of software
 
 #### functions:
-
+```
 a) run:
 	- inputs - args, addressCounter(global)
 	- outputs - addressCounter(global)
@@ -143,6 +144,7 @@ c) __main__:
 	- inputs - none
 	- outputs - none
 	- action - calls main
+```
 
 ### 6) memory_manage.py
 
@@ -151,7 +153,7 @@ c) __main__:
 - action: handles memory management
 
 #### functions: 
-
+```
 a) symtab_flush:
 	- inputs - none
 	- outputs - none
@@ -211,6 +213,7 @@ j) _init_:
 	- inputs - none
 	- outputs - none
 	- action - flushes symtab, mempad and memory, initialises memory and mempad
+```
 
 ### 7) processor.py
 
