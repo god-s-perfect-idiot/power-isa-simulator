@@ -1,5 +1,19 @@
 # POWERSIM
 
+An open-source cross platform POWER ISA simulator.
+
+### Launch Modes:
+
+- CLI Mode:
+run:
+`main.py -m operation mode -i input file -o output file`
+input and output files are optional
+
+- GUI Mode:
+Compile the script:
+`setup_windows.py`
+or Run `gui.py`
+
 
 ## Detailed Documentation:
 
