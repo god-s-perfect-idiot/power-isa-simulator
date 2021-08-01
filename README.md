@@ -12,6 +12,10 @@ input and output files are optional
 - GUI Mode:
 Compile the script:
 `setup_windows.py`
+run the command:
+```
+python3 setup_windows.py build
+```
 or Run `gui.py`
 
 
